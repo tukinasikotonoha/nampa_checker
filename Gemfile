@@ -85,3 +85,4 @@ gem 'font-awesome-sass', '~> 5.4.1'
 
 # slimの導入
 gem 'slim'
+gem 'html2slim'
