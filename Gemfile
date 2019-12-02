@@ -82,3 +82,8 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 # font-awesomeの導入
 gem 'font-awesome-sass', '~> 5.4.1'
+
+# slimの導入
+gem 'slim'
+gem 'html2slim'
+gem 'slim-rails'

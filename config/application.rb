@@ -19,6 +19,9 @@ module NampaChecker
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    # デフォルトのテンプレートエンジンをslimに変更
+    config.generators.template_engine = :slim
+
     # Timezoneを修正
     # DBへの保存はJSTで画面表示もJST(日本時間)
     config.time_zone = 'Tokyo'
