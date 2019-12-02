@@ -76,3 +76,9 @@ gem 'pry'
 gem 'pry-byebug'
 gem 'pry-doc'
 gem 'pry-rails'
+
+# Bootstrap4の導入
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+# font-awesomeの導入
+gem 'font-awesome-sass', '~> 5.4.1'
