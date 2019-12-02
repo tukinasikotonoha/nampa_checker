@@ -51,12 +51,28 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'fuubar'
+  gem 'launchy'
+  gem 'webdrivers'
+  gem 'shoulda-matchers'
+  gem 'timecop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# コードのチェック
+gem "rails_best_practices"
+gem 'rubocop-rails'
+gem 'annotate', github: 'ctran/annotate_models', branch: 'develop'
+
+# Debugger
+gem 'better_errors'
+gem 'byebug'
+gem 'pry'
+gem 'pry-byebug'
+gem 'pry-doc'
+gem 'pry-rails'
