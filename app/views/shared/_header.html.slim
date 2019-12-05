@@ -5,10 +5,14 @@ header
     button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navmenu1" aria-controls="navmenu1" aria-expanded="false" aria-label="Toggle navigation"]
       span.navbar-toggler-icon
     #navmenu1.collapse.navbar-collapse
-      .navbar-nav
+      .navbar-nav.navbar-left
         = link_to root_path, class: "nav-item nav-link" do
           i.fas.fa-plus
           | アナタの女装写真を検証 
         = link_to root_path, class: "nav-item nav-link" do
           i.fas.fa-users
-          | マイページ 
+          | マイページ
+      .navbar-nav.navbar-right
+        = link_to root_path, class: "nav-item nav-link" do
+          i.fas.fa-users
+          | ログアウト
