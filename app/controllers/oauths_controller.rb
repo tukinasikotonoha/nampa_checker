@@ -8,9 +8,9 @@ class OauthsController < ApplicationController
   end
 
   def callback
-    provider = "twitter"
+    provider = 'twitter'
     # Twitter認証をキャンセルした場合401が返ってくるのでリダイレクトさせる
-    redirect_to root_path, warning: "#{provider}のログインに失敗しました" and return if params[:denied].present?
+    redirect_to(root_path, warning: "#{provider}のログインに失敗しました") && return if params[:denied].present?
     @user = login_from(provider)
     if @user
       # redirect_to root_path, :notice => "#{provider.titleize}でログインしました!"
@@ -22,7 +22,7 @@ class OauthsController < ApplicationController
         reset_session # protect from session fixation attack
         auto_login(@user)
         redirect_to root_path, success: "#{provider}でログインしました!"
-      rescue
+      rescue StandardError
         redirect_to root_path, warning: "#{provider}のログインに失敗しました"
       end
     end

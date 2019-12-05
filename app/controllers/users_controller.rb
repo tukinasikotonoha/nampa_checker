@@ -7,9 +7,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, success: "ユーザーを作成しました"
+      redirect_to root_path, success: 'ユーザーを作成しました'
     else
-      redirect_to root_path, danger: "ユーザーの作成に失敗しました"
+      redirect_to root_path, danger: 'ユーザーの作成に失敗しました'
     end
   end
 
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   # Strong Parameter
   def user_params
     params.require(:user).permit(
-        :name
+      :name
     )
   end
 end
