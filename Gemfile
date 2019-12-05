@@ -92,3 +92,6 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'slim'
 gem 'html2slim'
 gem 'slim-rails'
+
+# ログイン機能
+gem 'sorcery'
