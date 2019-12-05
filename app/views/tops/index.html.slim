@@ -1,2 +1,22 @@
+
 h1
-  | ナンパされチェッカー
+  = image_tag 'top-title.png', width: '90%'
+h2
+  | アナタの「女装姿」が女性に見えるかを検証します
+div
+  = image_tag 'top.jpg', width: '70%'
+
+div.border.rounded.p-4
+  - if logged_in?
+    div.text-left.mb-3
+      p
+        | 画像ファイルをアップロード
+      = file_field :upload_file, class: "hoge"
+    = link_to root_path, class: 'btn-block btn-danger rounded p-3' do
+      i.fas.fa-female
+      | 女性に見える確率を検証
+
+  - else
+    = link_to auth_at_provider_path(:provider => :twitter), class: 'btn-block btn-primary rounded p-3' do
+      i.fab.fa-twitter
+      | Twitterでログイン
