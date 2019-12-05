@@ -5,5 +5,5 @@ h2
 div
   = image_tag 'top.jpg', width: 800
 
-= link_to root_path, class: 'btn btn-primary' do
+= link_to auth_at_provider_path(:provider => :twitter), class: 'btn btn-primary' do
   | Twitterでログイン
