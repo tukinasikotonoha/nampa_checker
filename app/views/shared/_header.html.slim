@@ -12,6 +12,6 @@ header
         = link_to root_path, class: "nav-item nav-link" do
           i.fas.fa-users
           | マイページ
-        = link_to root_path, class: "nav-item nav-link" do
+        = link_to logout_path, class: "nav-item nav-link", method: :delete do
           i.fas.fa-users
           | ログアウト
