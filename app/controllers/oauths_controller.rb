@@ -13,7 +13,6 @@ class OauthsController < ApplicationController
     redirect_to(root_path, warning: "#{provider}のログインに失敗しました") && return if params[:denied].present?
     @user = login_from(provider)
     if @user
-      # redirect_to root_path, :notice => "#{provider.titleize}でログインしました!"
       redirect_to root_path, success: "#{provider}でログインしました!"
     else
       begin
