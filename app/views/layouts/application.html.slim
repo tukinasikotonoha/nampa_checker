@@ -2,7 +2,7 @@ doctype html
 html
   head
     title
-      | NampaChecker
+      | ナンパされチェッカー
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -13,4 +13,5 @@ html
     - else
       = render 'shared/before_login_header'
     = render 'shared/flash_message.html'
-    = yield
+    .container.text-center.pt-5
+      = yield
