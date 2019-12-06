@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'tops#index'
-  resources :results, param: :uuid, only: %i[index show new create]
+  resources :results, param: :uuid, only: %i[index show new create destroy]
   # マイページ
   get '/mypage', to: 'users#show'
   # ログアウト機能

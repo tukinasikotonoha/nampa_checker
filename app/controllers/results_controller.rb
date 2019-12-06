@@ -1,12 +1,7 @@
 class ResultsController < ApplicationController
+  before_action :set_result, only: %i[show destroy]
 
-  def show
-    @result = Result.find_by(uuid: params[:uuid])
-  end
-
-  def new
-    @result = Result.new
-  end
+  def show; end
 
   def create
     @result = current_user.results.new(result_params)
@@ -19,6 +14,11 @@ class ResultsController < ApplicationController
     end
   end
 
+  def destroy
+    @result.destroy
+    redirect_to mypage_path
+  end
+
   private
 
   # Strong Parameter
@@ -28,5 +28,9 @@ class ResultsController < ApplicationController
         :gender,
         :image
     )
+  end
+
+  def set_result
+    @result = Result.find_by(uuid: params[:uuid])
   end
 end

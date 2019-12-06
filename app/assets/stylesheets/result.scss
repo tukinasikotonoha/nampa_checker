@@ -1,3 +1,4 @@
+//検証結果画面の文字サイズ
 .inspection-result{
   font-size: 30px;
   span{
@@ -5,6 +6,7 @@
   }
 }
 
+//ボタン関連のCSS
 .validate-photo{
   color: #FFF;
   background-color: #EF0896;
@@ -26,6 +28,7 @@
   font-size: 20px;
 }
 
+//マイページの吹き出しCSS
 .balloon1-left {
   position: relative;
   //display: inline-block;
@@ -59,6 +62,7 @@
   padding: 0;
 }
 
+//マイページの検証日時
 .validation-date{
   font-size: 20px;
 }

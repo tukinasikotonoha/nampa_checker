@@ -25,7 +25,8 @@ h1.mb-5
 - @results.each do |result|
   .row.inspection-result.mb-5
     .col-sm.col-md-4
-      = image_tag result.image, width: "100%", class: "mb-2"
+      = link_to result_path(result.uuid)
+        = image_tag result.image, width: "100%", class: "mb-2"
     .col-sm.col-md-8.text-left
       .balloon1-left.mb-2
         = "#{result.score}%"
@@ -33,5 +34,5 @@ h1.mb-5
         .col-sm.text-center.validation-date
           | 検証日時：
           = "#{result.created_at}"
-          = link_to root_path, class: 'btn-block result-delete-button p-3 mt-2' do
+          = link_to result_path(result.uuid), class: 'btn-block result-delete-button p-3 mt-2', method: :delete, data: { confirm: "検証結果を削除してもよろしいですか？" } do
             | 削除
