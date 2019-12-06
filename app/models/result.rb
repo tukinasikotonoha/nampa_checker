@@ -15,4 +15,10 @@ class Result < ApplicationRecord
       break random_token unless self.class.exists?(uuid: random_token)
     end
   end
+  # 性別が男性だった場合スコアを修正
+  def gender_is_male_change_score
+    if self.male?
+      self.score = 100 - self.score
+    end
+  end
 end

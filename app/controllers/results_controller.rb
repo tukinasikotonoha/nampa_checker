@@ -10,6 +10,7 @@ class ResultsController < ApplicationController
 
   def create
     @result = current_user.results.new(result_params)
+    @result.gender_is_male_change_score
     @result.message_id = Message.where(maximum: @result.score..Float::INFINITY).order("maximum desc").last.id
     if @result.save
       redirect_to result_path(@result.uuid)
