@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'tops#index'
   resources :results, param: :uuid, only: %i[index show new create]
   # マイページ
-  delete '/mypage', to: 'users#show'
+  get '/mypage', to: 'users#show'
   # ログアウト機能
   delete '/logout', to: 'user_sessions#destroy'
   # Twitterログイン
