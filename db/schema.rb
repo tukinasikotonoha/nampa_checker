@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_032830) do
 
   create_table "results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.decimal "score", precision: 5, scale: 2
+    t.integer "gender", null: false
     t.bigint "user_id", null: false
     t.bigint "message_id", null: false
     t.datetime "created_at", null: false
