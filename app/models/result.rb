@@ -4,6 +4,8 @@ class Result < ApplicationRecord
   belongs_to :user
   belongs_to :message
   has_one_attached :image
+  validates :user_id, presence: true
+  validates :message_id, presence: true
   # 検証結果の性別を判定
   enum gender: { male: 0, female: 1 }
   # IDをUUID化する
