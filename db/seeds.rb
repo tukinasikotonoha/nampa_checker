@@ -52,12 +52,3 @@ Message.create!(
         },
     ]
 )
-
-User.create!(name:  "ことのは",)
-
-Result.create!(
-    score:  95.72,
-    gender: "female",
-    user_id: 1,
-    message_id: 1
-)

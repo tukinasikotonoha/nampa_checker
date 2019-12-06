@@ -10,9 +10,9 @@ class Result < ApplicationRecord
   enum gender: { male: 0, female: 1 }
   # IDをUUID化する
   def generate_token
-    self.id = loop do
+    self.uuid = loop do
       random_token = SecureRandom.uuid
-      break random_token unless self.class.exists?(id: random_token)
+      break random_token unless self.class.exists?(uuid: random_token)
     end
   end
 end
