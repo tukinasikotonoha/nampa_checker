@@ -1,8 +1,8 @@
-h1.text-center 検証結果
-.row
-  .col-sm.col-md-4.text-center
+h1.mb-5 検証結果
+.row.inspection-result
+  .col-sm.col-md-4
     = image_tag @result.image, width: "100%"
-  .col-sm.col-md-8
+  .col-sm.col-md-8.text-left
     | アナタが女性に見える確率は
     br/
     span = @result.score
@@ -10,9 +10,11 @@ h1.text-center 検証結果
     br/
     = @result.message.advice
     .row
-      .col-sm.col-md-6.text-center
-        button.btn.btn-secondary type="button" 
-          = link_to '別の写真で検証', root_path, class: "btn btn-default"
-      .col-sm.col-md-6.text-center
-        button.btn.btn-secondary type="button" 
-          = link_to '別の写真で検証', root_path, class: "btn btn-default"
+      .col-sm.text-center.mt-4
+        = link_to root_path, class: 'btn-block validate-photo p-3' do
+          i.fas.fa-female
+          | 別の写真で検証
+      .col-sm.text-center.mt-4
+        = link_to root_path, class: 'btn-block twitter-button p-3' do
+          i.fab.fa-twitter
+          | 結果をTwitterに投稿

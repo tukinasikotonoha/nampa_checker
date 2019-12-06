@@ -1,4 +1,3 @@
-
 h1
   = image_tag 'top-title.png', width: '90%'
 h2
@@ -9,15 +8,7 @@ div
 div.border.rounded.p-4
   - if logged_in?
     = render 'results/form', result: @result
-    / div.text-left.mb-3
-    /   p
-    /     | 画像ファイルをアップロード
-    /   = file_field :upload_file, class: "hoge"
-    / = link_to root_path, class: 'btn-block btn-danger rounded p-3' do
-    /   i.fas.fa-female
-    /   | 女性に見える確率を検証
-
   - else
-    = link_to auth_at_provider_path(:provider => :twitter), class: 'btn-block btn-primary rounded p-3' do
+    = link_to auth_at_provider_path(:provider => :twitter), class: 'btn-block twitter-button p-3' do
       i.fab.fa-twitter
       | Twitterでログイン
