@@ -1,6 +1,8 @@
 class ResultsController < ApplicationController
 
-  def show; end
+  def show
+    @result = Result.find_by(uuid: params[:uuid])
+  end
 
   def new
     @result = Result.new
@@ -10,9 +12,9 @@ class ResultsController < ApplicationController
     @result = current_user.results.new(result_params)
     @result.message_id = Message.where(maximum: @result.score..Float::INFINITY).order("maximum desc").last.id
     if @result.save
-      redirect_to root_path
+      redirect_to result_path(@result.uuid)
     else
-      render :new
+      redirect_to root_path, danger: "検証に失敗しました"
     end
   end
 
