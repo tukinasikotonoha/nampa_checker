@@ -6,5 +6,7 @@ class User < ApplicationRecord
   enum role: { general: 0, admin: 1 }
   # Twitter認証の関連付け
   has_many :authentications, dependent: :destroy
+  # ユーザーは複数の検証結果を持つ
+  has_many :results
   accepts_nested_attributes_for :authentications
 end
