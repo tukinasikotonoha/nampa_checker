@@ -93,3 +93,6 @@ gem 'slim-rails'
 
 # ログイン機能
 gem 'sorcery'
+
+# 日本語対応
+gem 'rails-i18n'
