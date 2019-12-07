@@ -16,15 +16,18 @@ class Result < ApplicationRecord
       break random_token unless self.class.exists?(uuid: random_token)
     end
   end
+
   # 性別が男性だった場合スコアを修正
   def gender_is_male_change_score
-    if self.male?
-      self.score = 100 - self.score
+    if male?
+      self.score = 100 - score
     end
   end
+
   # ファイルの拡張子とファイルサイズのバリデーション
   def validate_image
     return unless image.attached?
+
     if image.blob.byte_size > 10.megabytes
       # image.purge
       errors.add(:image, 'のファイルサイズは10メガバイト以下でお願いします')
@@ -33,6 +36,7 @@ class Result < ApplicationRecord
       errors.add(:image, 'の拡張子はjpg/jpeg/gif/pngのみアップロード可能です')
     end
   end
+
   # 拡張子のバリデーション
   def image?
     %w[image/jpg image/jpeg image/gif image/png].include?(image.blob.content_type)
