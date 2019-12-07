@@ -10,7 +10,9 @@ class ResultsController < ApplicationController
     if @result.save
       redirect_to result_path(@result.uuid)
     else
-      redirect_to root_path, danger: "検証に失敗しました"
+      @result.image.attachment.purge
+      flash.now[:danger] = "検証に失敗しました"
+      render :'tops/index'
     end
   end
 

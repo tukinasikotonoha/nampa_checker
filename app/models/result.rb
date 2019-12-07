@@ -6,6 +6,7 @@ class Result < ApplicationRecord
   has_one_attached :image
   validates :user_id, presence: true
   validates :message_id, presence: true
+  validate :validate_image
   # 検証結果の性別を判定
   enum gender: { male: 0, female: 1 }
   # IDをUUID化する
@@ -20,5 +21,20 @@ class Result < ApplicationRecord
     if self.male?
       self.score = 100 - self.score
     end
+  end
+  # ファイルの拡張子とファイルサイズのバリデーション
+  def validate_image
+    return unless image.attached?
+    if image.blob.byte_size > 10.megabytes
+      # image.purge
+      errors.add(:image, 'のファイルサイズは10メガバイト以下でお願いします')
+    elsif !image?
+      # image.purge
+      errors.add(:image, 'の拡張子はjpg/jpeg/gif/pngのみアップロード可能です')
+    end
+  end
+  # 拡張子のバリデーション
+  def image?
+    %w[image/jpg image/jpeg image/gif image/png].include?(image.blob.content_type)
   end
 end
