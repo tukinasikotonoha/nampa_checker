@@ -1,0 +1,6 @@
+ja:
+  enums:
+    result:
+      gender:
+        male: 男性
+        female: 女性
