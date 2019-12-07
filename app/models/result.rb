@@ -19,9 +19,7 @@ class Result < ApplicationRecord
 
   # 性別が男性だった場合スコアを修正
   def gender_is_male_change_score
-    if male?
-      self.score = 100 - score
-    end
+    self.score = 100 - score if male?
   end
 
   # ファイルの拡張子とファイルサイズのバリデーション
