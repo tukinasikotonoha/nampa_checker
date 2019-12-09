@@ -12,7 +12,7 @@ class ResultsController < ApplicationController
     else
       @result.image.attachment.purge
       flash.now[:danger] = '検証に失敗しました'
-      render :'tops/index'
+      render 'tops/index'
     end
   end
 
