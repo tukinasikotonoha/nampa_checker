@@ -32,10 +32,8 @@ class Result < ApplicationRecord
     return unless image.attached?
 
     if image.blob.byte_size > 10.megabytes
-      # image.purge
       errors.add(:image, 'のファイルサイズは10メガバイト以下でお願いします')
     elsif !image?
-      # image.purge
       errors.add(:image, 'の拡張子はjpg/jpeg/gif/pngのみアップロード可能です')
     end
   end
