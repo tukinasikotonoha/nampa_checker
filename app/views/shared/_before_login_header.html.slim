@@ -1,11 +1,11 @@
 header
   nav.navbar.navbar-expand-md.navbar-dark.bg-dark
-    a.navbar-brand[href="/"]
+    a.navbar-brand[href='/']
       | ナンパされチェッカー
-    button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navmenu1" aria-controls="navmenu1" aria-expanded="false" aria-label="Toggle navigation"]
+    button.navbar-toggler[type='button' data-toggle='collapse' data-target='#navmenu1' aria-controls='navmenu1' aria-expanded='false' aria-label='Toggle navigation']
       span.navbar-toggler-icon
     #navmenu1.collapse.navbar-collapse
       .navbar-nav
-        = link_to auth_at_provider_path(provider: :twitter), class: "nav-item nav-link" do
+        = link_to auth_at_provider_path(provider: :twitter), class: 'nav-item nav-link' do
           i.fab.fa-twitter
           | Twitterでログイン
