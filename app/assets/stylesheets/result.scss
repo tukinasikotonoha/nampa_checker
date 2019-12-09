@@ -1,0 +1,64 @@
+//検証結果画面の文字サイズ
+.inspection-result{
+  font-size: 30px;
+  span{
+    font-size: 90px;
+  }
+}
+
+//ボタン関連のCSS
+.validate-photo{
+  color: #FFF;
+  background-color: #EF0896;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.twitter-button{
+  color: #FFF;
+  background-color: #43C2FA;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.result-delete-button{
+  color: #FFF;
+  background-color: #FF2424;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+//マイページの吹き出しCSS
+.balloon1-left {
+  position: relative;
+  padding: 7px 10px;
+  color: #FFF;
+  font-size: 80px;
+  background: #EF0896;
+  width: 100%;
+  height: 60%;
+  border-radius: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.balloon1-left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -27px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #EF0896;
+}
+
+.balloon1-left p {
+  margin: 0;
+  padding: 0;
+}
+
+//マイページの検証日時
+.validation-date{
+  font-size: 20px;
+}

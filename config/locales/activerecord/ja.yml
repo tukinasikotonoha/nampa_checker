@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      result: 検証結果
+    attributes:
+      result:
+        score: スコア
+        gender: 性別
+        email: メールアドレス
+        image: 画像
+        time:
+          formats:
+            default: "%Y/%m/%d %H:%M:%S"
+            long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+            short: "%y/%m/%d %H:%M"
