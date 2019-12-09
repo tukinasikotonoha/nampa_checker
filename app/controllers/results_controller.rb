@@ -4,7 +4,7 @@ class ResultsController < ApplicationController
   def show; end
 
   def create
-    @result = current_user.results.new(result_params)
+    @result = current_user.results.build(result_params)
     @result.gender_is_male_change_score
     @result.message_id = Message.where(maximum: @result.score..Float::INFINITY).order('maximum desc').last.id
     if @result.save
