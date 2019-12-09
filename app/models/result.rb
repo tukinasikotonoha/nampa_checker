@@ -18,8 +18,9 @@ class Result < ApplicationRecord
   end
 
   # 性別が男性だった場合スコアを修正
+  Onehundred = 100
   def reverse_score
-    self.score = 100 - score
+    self.score = Onehundred - score
   end
 
   # scoreに値に応じてメッセージを付与
