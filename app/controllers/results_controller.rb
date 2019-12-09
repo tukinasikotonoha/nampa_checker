@@ -17,7 +17,7 @@ class ResultsController < ApplicationController
   end
 
   def destroy
-    @result.destroy
+    @result.destroy!
     redirect_to mypage_path
   end
 
