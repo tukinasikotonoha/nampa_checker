@@ -7,6 +7,6 @@ class User < ApplicationRecord
   # Twitter認証の関連付け
   has_many :authentications, dependent: :destroy
   # ユーザーは複数の検証結果を持つ
-  has_many :results
+  has_many :results, dependent: :destroy
   accepts_nested_attributes_for :authentications
 end
