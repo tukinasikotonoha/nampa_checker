@@ -1,6 +1,7 @@
 div.text-left.mb-3
   p
     | 画像ファイルをアップロード
+  - @result = Result.new
   = form_with model: @result, local: true do |form|
     = render 'layouts/error_messages', model: form.object
     .form-group
