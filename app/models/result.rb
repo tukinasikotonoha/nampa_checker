@@ -18,8 +18,8 @@ class Result < ApplicationRecord
   end
 
   # 性別が男性だった場合スコアを修正
-  def gender_is_male_change_score
-    self.score = 100 - score if male?
+  def reverse_score
+    self.score = 100 - score
   end
 
   # scoreに値に応じてメッセージを付与

@@ -5,7 +5,7 @@ class ResultsController < ApplicationController
 
   def create
     @result = current_user.results.build(result_params)
-    @result.gender_is_male_change_score
+    @result.reverse_score if @result.male?
     @result.add_message
     if @result.save
       redirect_to result_path(@result.uuid)
