@@ -1,4 +1,8 @@
 class Result < ApplicationRecord
+  # 定数を定義
+  MAXIMUM_SCORE = 100
+  MAXIMUM_SCORE.freeze
+
   before_create :generate_token
 
   belongs_to :user
@@ -18,9 +22,9 @@ class Result < ApplicationRecord
   end
 
   # 性別が男性だった場合スコアを修正
-  ONE_HUNDRED = 100
+
   def reverse_score
-    self.score = ONE_HUNDRED - score
+    self.score = MAXIMUM_SCORE - score
   end
 
   # scoreに値に応じてメッセージを付与
