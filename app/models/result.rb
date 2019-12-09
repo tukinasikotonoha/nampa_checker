@@ -22,6 +22,11 @@ class Result < ApplicationRecord
     self.score = 100 - score if male?
   end
 
+  # scoreに値に応じてメッセージを付与
+  def add_message
+    self.message_id = Message.where(maximum: score..Float::INFINITY).order('maximum desc').last.id
+  end
+
   # ファイルの拡張子とファイルサイズのバリデーション
   def validate_image
     return unless image.attached?
