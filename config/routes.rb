@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   get '/mypage', to: 'users#show'
   # ログアウト機能
   delete '/logout', to: 'user_sessions#destroy'
-  # Twitterログイン
-  post 'oauth/callback', to: 'oauths#callback'
+  post 'oauth/callback', to: 'oauths#callback' # Twitterログイン
   get 'oauth/callback', to: 'oauths#callback' # for use with Github, Facebook
   get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
 end
