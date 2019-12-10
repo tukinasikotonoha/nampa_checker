@@ -5,12 +5,6 @@ div.text-left.mb-3
   = form_with model: @result, local: true do |form|
     = render 'layouts/error_messages', model: form.object
     .form-group
-      = form.label :score
-      = form.number_field :score, step: '0.01', class: 'form-control', rows: '10', value: 97.28
-    .form-group
-      = form.label :gender
-      = form.select :gender, Result.genders.keys.map {|k| [I18n.t("enums.result.gender.#{k}"), k]}, {}, class: 'form-control mr-1'
-    .form-group
       = form.label :image
       = form.file_field :image, class: 'form-control', id: 'myfile', required: true, accept: 'image/*'
     = button_tag type: 'submit', class: 'btn-block validate-photo p-3' do
