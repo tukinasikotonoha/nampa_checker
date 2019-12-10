@@ -59,7 +59,7 @@ RSpec.describe 'Results', type: :system do
     end
 
     context '画像の検証に成功した後にマイページから検証画像を削除' do
-      it 'マイページ内に検証結果のresult-idを持つdivタグが存在しないことを検証する' do
+      it 'マイページ内に検証結果のresult-idを持つdivタグが存在しないことを検証する' , js: true do
         attach_file 'result[image]', "#{Rails.root}/spec/system/images/female1.jpg"
         click_button '女性に見える確率を検証'
         within('#navmenu1') do
