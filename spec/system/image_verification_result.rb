@@ -11,7 +11,6 @@ RSpec.describe 'Results', type: :system do
         attach_file 'result[image]', "#{Rails.root}/spec/system/images/images_over_10_megabytes.jpg"
         click_button '女性に見える確率を検証'
         expect(page).to have_content '画像のファイルサイズは10メガバイト以下でお願いします'
-        binding.pry
       end
     end
   end
