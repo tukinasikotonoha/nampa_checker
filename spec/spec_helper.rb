@@ -93,8 +93,8 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
-  config.before :suite do
-    fixture_paths = "#{Rails.root}/db/seeds.rb"
-    SeedFu.seed(fixture_paths)
-  end
+  # config.before :suite do
+  #   fixture_paths = "#{Rails.root}/db/seeds.rb"
+  #   SeedFu.seed(fixture_paths)
+  # end
 end
