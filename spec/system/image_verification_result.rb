@@ -54,7 +54,7 @@ RSpec.describe 'Results', type: :system do
         within('#navmenu1') do
           click_on 'マイページ'
         end
-        expect(page).to have_selector "#result-#{user.results.first.id}"
+        expect(page).to have_selector "#result-#{user.results.first.uuid}"
       end
     end
 
@@ -65,11 +65,11 @@ RSpec.describe 'Results', type: :system do
         within('#navmenu1') do
           click_on 'マイページ'
         end
-        within "#result-#{user.results.first.id}" do
+        within "#result-#{user.results.first.uuid}" do
           click_on '削除'
         end
         page.driver.browser.switch_to.alert.accept
-        expect(page).to_not have_selector "#result-#{user.results.first.id}"
+        expect(page).to_not have_selector "#result-#{user.results.first.uuid}"
       end
     end
   end
