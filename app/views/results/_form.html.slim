@@ -1,6 +1,10 @@
 div.text-left.mb-3
   p
     | 画像ファイルをアップロード
+    br/
+    | ※ アップロードできる拡張子は「JPEG/JPG/PNG/GIF」のみです。
+    br/
+    | ※ ファイズサイズは10MB以下でお願いします。
   - @result ||= Result.new
   = form_with model: @result, local: true do |form|
     = render 'layouts/error_messages', model: form.object

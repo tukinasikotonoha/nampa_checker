@@ -5,7 +5,7 @@ class ResultsController < ApplicationController
 
   def create
     @result = current_user.results.build(result_params)
-    # 10メガバイトを超える画像や、画像以外のファイルを顔認証APIで検証したくないので、最初にバリデーションを走らせる
+    # 10MBを超える画像や、画像以外のファイルを顔認証APIで検証したくないので、最初にバリデーションを走らせる
     if @result.validate_image
       @result.image.attachment.purge
       flash.now[:danger] = '検証に失敗しました'
