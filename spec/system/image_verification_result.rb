@@ -14,7 +14,7 @@ RSpec.describe 'Results', type: :system do
       end
     end
 
-    context 'bmp形式の画像をアップロード' do
+    context 'svg形式の画像をアップロード' do
       it '「画像の拡張子はjpg/jpeg/gif/pngのみアップロード可能です」とフラッシュメッセージが表示される' do
         attach_file 'result[image]', "#{Rails.root}/spec/system/images/svg_icon.svg"
         click_button '女性に見える確率を検証'
