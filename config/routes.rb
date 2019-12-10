@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   post 'oauth/callback', to: 'oauths#callback' # Twitterログイン
   get 'oauth/callback', to: 'oauths#callback' # for use with Github, Facebook
   get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
+  # テスト環境でTwitterログイン認証を通すためのルーティング
+  if Rails.env.test?
+    get '/login_as/:user_id', to: 'test/sessions#login_as'
+  end
 end
