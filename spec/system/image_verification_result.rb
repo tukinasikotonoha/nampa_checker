@@ -41,7 +41,7 @@ RSpec.describe 'Results', type: :system do
 
     context '性別判定が「男性」の画像をアップロード' do
       it '検証結果の画面に遷移し、画面内に「判定されたスコアの値」が存在することを検証' do
-        attach_file 'result[image]', "#{Rails.root}/spec/system/images/male1.jpg"
+        attach_file 'result[image]', "#{Rails.root}/spec/system/images/male_free-min.jpg"
         click_button '女性に見える確率を検証'
         expect(page).to have_selector '.gender-rate', text: "#{user.results.first.score}"
         expect(current_path).to eq result_path(user.results.first.uuid)
