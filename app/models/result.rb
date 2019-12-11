@@ -41,6 +41,7 @@ class Result < ApplicationRecord
       errors.add(:image, 'の拡張子はjpg/jpeg/gif/pngのみアップロード可能です')
     end
   end
+
   # 拡張子のバリデーション
   def image?
     %w[image/jpg image/jpeg image/gif image/png].include?(image.blob.content_type)
@@ -49,18 +50,19 @@ class Result < ApplicationRecord
   # 顔認証API
   def return_gender_rate
     credentials = Aws::Credentials.new(Rails.application.credentials.aws_access_key_id, Rails.application.credentials.aws_secret_access_key)
-    Aws.config.update({region: 'us-west-1'})
+    Aws.config.update(region: 'us-west-1')
     client = Aws::Rekognition::Client.new credentials: credentials
     # photo = self.image.blob.filename.to_s
     # path = File.expand_path(photo) # expand path relative to the current directory
     # file = File.read(path)
     attrs = {
-        image: {bytes: self.image.download},
-        attributes: ['ALL']
+      image: { bytes: image.download },
+      attributes: ['ALL']
     }
     response = client.detect_faces attrs
     # puts "Detected faces for: #{photo}"
     return if response.face_details.blank?
+
     self.gender = response.face_details.first[:gender][:value].downcase
     self.score = response.face_details.first[:gender][:confidence]
   end
