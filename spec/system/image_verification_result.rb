@@ -30,19 +30,20 @@ RSpec.describe 'Results', type: :system do
       end
     end
 
-    context '女性である確率が「95.78%」の画像をアップロード' do
-      it '検証結果の画面に遷移し、画面内に「95.78」が存在することを検証' do
+    context '性別判定が「女性」の画像をアップロード' do
+      it '検証結果の画面に遷移し、画面内に「判定されたスコアの値」が存在することを検証' do
         attach_file 'result[image]', "#{Rails.root}/spec/system/images/female1.jpg"
         click_button '女性に見える確率を検証'
-        expect(page).to have_selector '.gender-rate', text: '95.78'
+        expect(page).to have_selector '.gender-rate', text: "#{user.results.first.score}"
         expect(current_path).to eq result_path(user.results.first.uuid)
       end
     end
 
-    context '女性である確率が「0.6%」の画像をアップロード' do
-      it '検証結果の画面に遷移し、画面内に「0.6」が存在することを検証' do
+    context '性別判定が「男性」の画像をアップロード' do
+      it '検証結果の画面に遷移し、画面内に「判定されたスコアの値」が存在することを検証' do
         attach_file 'result[image]', "#{Rails.root}/spec/system/images/male1.jpg"
         click_button '女性に見える確率を検証'
+        expect(page).to have_selector '.gender-rate', text: "#{user.results.first.score}"
         expect(current_path).to eq result_path(user.results.first.uuid)
       end
     end
