@@ -6,23 +6,16 @@ class ResultsController < ApplicationController
   def create
     @result = current_user.results.build(result_params)
     # 10MBを超える画像や、画像以外のファイルを顔認証APIで検証したくないので、最初にバリデーションを走らせる
-    if @result.validate_image
-      @result.image.attachment.purge
-      flash.now[:danger] = '検証に失敗しました'
-      render 'tops/index'
-      return
-    end
-    @result.return_gender_rate
-    if @result.gender.blank?
-      @result.errors.add(:image, 'の性別を判定できませんでした')
-      @result.image.attachment.purge
-      flash.now[:danger] = '検証に失敗しました'
-      render 'tops/index'
-      return
-    end
-    @result.reverse_score if @result.male?
-    @result.add_message
-    if @result.save
+    if @result.valid?
+      @result.return_gender_rate
+      if @result.gender.blank?
+        @result.image.attachment.purge
+        redirect_to root_path, danger: '画像の性別を判定できませんでした'
+        return
+      end
+      @result.reverse_score if @result.male?
+      @result.add_message
+      @result.save
       redirect_to result_path(@result.uuid)
     else
       @result.image.attachment.purge
