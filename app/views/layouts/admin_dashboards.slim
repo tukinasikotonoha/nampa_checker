@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title= admin_full_title(yield(:title))
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'admin', media: 'all'
+    = javascript_include_tag 'admin'
+  body.hold-transition.sidebar-mini
+    .wrapper
+      = render 'admin/shared/header'
+      = render 'admin/shared/sidemenu'
+      .content-wrapper
+        = render 'shared/flash_message'
+        = yield

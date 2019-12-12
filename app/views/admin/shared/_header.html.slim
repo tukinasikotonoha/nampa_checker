@@ -1,0 +1,10 @@
+nav.main-header.navbar.navbar-expand.bg-white.navbar-light.border-bottom
+  /! Left navbar links
+  ul.navbar-nav
+    li.nav-item
+      a.nav-link data-widget="pushmenu" href="#" 
+        i.fa.fa-bars
+  /! Right navbar links
+  ul.navbar-nav.ml-auto
+    li.nav-item
+      = link_to 'ログアウト', admin_logout_path, class: 'dropdown-item', method: :delete

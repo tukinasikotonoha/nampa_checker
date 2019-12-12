@@ -1,0 +1,17 @@
+- content_for(:title, 'ログイン')
+.login-box
+  .login-logo
+    h2= 'ログイン'
+  /! /.login-logo
+  .card
+    .card-body.login-card-body
+      = form_with url: admin_login_path, local: true do |form|
+        .form-group
+          = form.label :email, 'メールアドレス'
+          = form.email_field :email, class: 'form-control'
+        .form-group
+          = form.label :password, 'パスワード'
+          = form.password_field :password, class: 'form-control'
+        = form.submit 'ログイン', class: "btn btn-primary"
+          /! /.login-card-body
+        /! /.login-box

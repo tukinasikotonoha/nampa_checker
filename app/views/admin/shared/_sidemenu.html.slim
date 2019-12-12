@@ -1,0 +1,34 @@
+aside.main-sidebar.sidebar-dark-primary.elevation-4
+  /! Brand Logo
+  = link_to admin_path, class: 'brand-link' do
+    = image_tag 'AdminLTELogo.png', class: 'brand-image img-circle elevation-3', alt: 'AdminLTE Logo'
+    span.brand-text.font-weight-light AdminLTE 3
+  /! Sidebar
+  .sidebar
+    /! Sidebar user panel (optional)
+    .user-panel.mt-3.pb-3.mb-3.d-flex
+      / .image
+      /   = image_tag(current_user.image.url, class: 'img-circle elevation-2', alt: 'User Image')
+      .info
+        = link_to admin_path, class: 'd-block' do
+          = "#{current_user.name}"
+    /! Sidebar Menu
+    nav.mt-2
+      ul.nav.nav-pills.nav-sidebar.flex-column data-accordion="false" data-widget="treeview" role="menu" 
+        /!
+          | Add icons to the links using the .nav-icon class
+          | with font-awesome or any other icon font library
+        li.nav-item.has-treeview.menu-open
+          ul.nav.nav-pills.nav-sidebar.flex-column
+            li.nav-item
+              = link_to root_path, class: "nav-link" do
+                i.far.fa-file.nav-icon
+                p
+                  | 掲示板一覧
+            li.nav-item
+              = link_to root_path, class: "nav-link" do
+                i.far.fa-file.nav-icon
+                p
+                  | ユーザー一覧
+                  /! /.sidebar-menu
+                  /! /.sidebar
