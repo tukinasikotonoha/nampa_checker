@@ -50,7 +50,7 @@ class Result < ApplicationRecord
   # 顔認証API
   def return_gender_rate
     credentials = Aws::Credentials.new(Rails.application.credentials.aws_access_key_id, Rails.application.credentials.aws_secret_access_key)
-    Aws.config.update(region: 'us-west-1')
+    Aws.config.update(region: 'ap-northeast-1')
     client = Aws::Rekognition::Client.new credentials: credentials
     # photo = self.image.blob.filename.to_s
     # path = File.expand_path(photo) # expand path relative to the current directory
