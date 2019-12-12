@@ -9,4 +9,5 @@ tr
   td
     = l user.created_at, format: :long
   td
-    = link_to '削除', admin_user_path(user), class: 'btn btn-danger', method: :delete, data: {confirm: 'ユーザーを削除しますか？'}
+    - if user.general?
+      = link_to '削除', admin_user_path(user), class: 'btn btn-danger', method: :delete, data: {confirm: 'ユーザーを削除しますか？'}
