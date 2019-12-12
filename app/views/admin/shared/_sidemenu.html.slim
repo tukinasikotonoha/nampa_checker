@@ -12,21 +12,21 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4
           = "#{current_user.name}"
     /! Sidebar Menu
     nav.mt-2
-      ul.nav.nav-pills.nav-sidebar.flex-column data-accordion="false" data-widget="treeview" role="menu" 
+      ul.nav.nav-pills.nav-sidebar.flex-column data-accordion='false' data-widget='treeview' role='menu'
         li.nav-item.has-treeview.menu-open
           ul.nav.nav-pills.nav-sidebar.flex-column
             li.nav-item
-              = link_to root_path, class: "nav-link" do
+              = link_to root_path, class: 'nav-link' do
                 i.far.fa-file.nav-icon
                 p
                   | ユーザー一覧
             li.nav-item
-              = link_to root_path, class: "nav-link" do
+              = link_to root_path, class: 'nav-link' do
                 i.far.fa-file.nav-icon
                 p
                   | 検証結果一覧
             li.nav-item
-              = link_to root_path, class: "nav-link" do
+              = link_to root_path, class: 'nav-link' do
                 i.far.fa-file.nav-icon
                 p
                   | メッセージ一覧
