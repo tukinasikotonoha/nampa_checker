@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     post '/login', to: 'user_sessions#create'
     delete '/logout', to: 'user_sessions#admin_logout'
     get '/', to: 'dashboards#index'
+    resources :users, only: %i[index destroy]
+    resources :results, only: %i[index show destroy]
   end
   # テスト環境でTwitterログイン認証を通すためのルーティング
   if Rails.env.test?

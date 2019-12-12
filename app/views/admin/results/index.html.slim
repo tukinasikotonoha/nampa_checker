@@ -1,0 +1,35 @@
+- content_for(:title, '検証結果一覧')
+.container.mb-5.pt-2
+  h1
+    | 検証結果一覧
+  .row
+    .col-md-12.mb-3
+      /! 検索フォーム
+      = search_form_for @q, url: admin_results_path do |f|
+        .row
+          .form-inline.align-items-center.mx-auto
+            .col-auto
+              = f.search_field :user_name_cont, class: 'form-control', placeholder: 'ユーザーの名前で検索'
+            .col-auto
+              = f.date_field :created_at_gteq, class: 'form-control'
+              span 〜
+              = f.date_field :created_at_lteq_end_of_day, class: 'form-control'
+            .col-auto
+              = f.submit class: 'btn btn-primary'
+  .row
+    .col-md-12
+      table.table.table-striped
+        thead
+          tr
+            th scope="col" Id
+            th scope="col" スコア
+            th scope="col" 名前
+            th scope="col" 作成日時
+            th scope="col" 
+        tbody
+          = render @results
+  /! ページネーション
+  .row
+    .col-md-12
+      nav
+        = paginate @results

@@ -1,0 +1,12 @@
+tr
+  td
+    = result.id
+  td
+    = link_to admin_result_path(result) do
+      = result.score
+  td
+    = result.user.name
+  td
+    = l result.created_at, format: :long
+  td
+    = link_to '削除', admin_result_path(result), class: 'btn btn-danger', method: :delete, data: {confirm: '検証結果を削除しますか？'}
