@@ -7,8 +7,6 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4
   .sidebar
     /! Sidebar user panel (optional)
     .user-panel.mt-3.pb-3.mb-3.d-flex
-      / .image
-      /   = image_tag(current_user.image.url, class: 'img-circle elevation-2', alt: 'User Image')
       .info
         = link_to admin_path, class: 'd-block' do
           = "#{current_user.name}"
