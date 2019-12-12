@@ -37,20 +37,20 @@ class Result < ApplicationRecord
 
     if image.blob.byte_size > 10.megabytes
       errors.add(:image, 'のファイルサイズは10MB以下でお願いします')
-    elsif !image?
+    elsif !content_type_image?
       errors.add(:image, 'の拡張子はjpg/jpeg/gif/pngのみアップロード可能です')
     end
   end
 
   # 拡張子のバリデーション
-  def image?
+  def content_type_image?
     %w[image/jpg image/jpeg image/gif image/png].include?(image.blob.content_type)
   end
 
   # 顔認証API
   def return_gender_rate
     credentials = Aws::Credentials.new(Rails.application.credentials.aws_access_key_id, Rails.application.credentials.aws_secret_access_key)
-    Aws.config.update(region: 'us-west-1')
+    Aws.config.update(region: 'ap-northeast-1')
     client = Aws::Rekognition::Client.new credentials: credentials
     # photo = self.image.blob.filename.to_s
     # path = File.expand_path(photo) # expand path relative to the current directory

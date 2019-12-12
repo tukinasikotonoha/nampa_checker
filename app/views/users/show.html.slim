@@ -2,19 +2,4 @@
 h1.mb-5
   = "#{current_user.name}"
   | さんのマイページ
-- @results.each do |result|
-  .row.inspection-result.mb-5 id="result-#{result.uuid}"
-    .col-sm.col-md-4
-      = link_to result_path(result.uuid)
-        = image_tag result.image, width: '100%', class: 'mb-2'
-    .col-sm.col-md-8.text-left
-      .balloon1-left.mb-2
-        = result.score
-        | %
-      .row
-        .col-sm.text-center.validation-date
-          | 検証日時：
-          = l result.created_at, format: :long
-          = link_to result_path(result.uuid), class: 'btn-block result-delete-button p-3 mt-2', method: :delete, data: { confirm: '検証結果を削除してもよろしいですか？' } do
-            i.far.fa-trash-alt
-            | 削除
+= render @results

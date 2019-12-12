@@ -5,8 +5,8 @@ div.text-left.mb-3
     | ※ アップロードできる拡張子は「JPEG/JPG/PNG/GIF」のみです。
     br/
     | ※ ファイズサイズは10MB以下でお願いします。
-  - @result ||= Result.new
-  = form_with model: @result, local: true do |form|
+  - result ||= Result.new
+  = form_with model: result, local: true do |form|
     = render 'layouts/error_messages', model: form.object
     .form-group
       = form.label :image
