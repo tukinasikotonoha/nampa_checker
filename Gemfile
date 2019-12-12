@@ -103,3 +103,9 @@ gem 'aws-sdk-rekognition'
 
 # テスト環境でSeedを作る
 gem 'seed-fu'
+
+# ページネーション
+gem 'kaminari'
+
+# 検索機能
+gem 'ransack'
