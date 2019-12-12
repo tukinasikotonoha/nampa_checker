@@ -96,6 +96,7 @@ gem 'sorcery'
 
 # 日本語対応
 gem 'rails-i18n'
+gem 'enum_help'
 
 # 顔認証API
 gem 'aws-sdk', '~> 3'

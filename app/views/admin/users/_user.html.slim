@@ -1,0 +1,12 @@
+tr
+  td
+    = user.id
+  td
+    = link_to admin_user_path(user) do
+      = user.name
+  td
+    = user.role_i18n
+  td
+    = l user.created_at, format: :long
+  td
+    = link_to '削除', admin_user_path(user), class: 'btn btn-danger', method: :delete, data: {confirm: 'ユーザーを削除しますか？'}
