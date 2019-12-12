@@ -1,0 +1,17 @@
+- content_for(:title, 'メッセージ一覧')
+.container.mb-5.pt-2
+  h1
+    | メッセージ一覧
+  .row
+    .col-md-12
+      table.table.table-striped
+        thead
+          tr
+            th scope="col" Id
+            th scope="col" 上限値
+            th scope="col"
+            th scope="col" 下限値
+            th scope="col" アドバイス文
+            th scope="col" 
+        tbody
+          = render @messages
