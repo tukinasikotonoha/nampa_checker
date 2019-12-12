@@ -2,10 +2,10 @@ tr
   td
     = result.id
   td
+    = result.user.name
+  td
     = link_to admin_result_path(result) do
       = result.score
-  td
-    = result.user.name
   td
     = l result.created_at, format: :long
   td

@@ -9,11 +9,11 @@
         .row
           .form-inline.align-items-center.mx-auto
             .col-auto
-              = f.search_field :user_name_cont, class: 'form-control', placeholder: 'ユーザーの名前で検索'
+              = f.search_field :user_name_cont, class: 'form-control', placeholder: 'ユーザーの名前'
             .col-auto
-              = f.date_field :created_at_gteq, class: 'form-control'
+              = f.number_field :score_gteq, class: 'form-control', placeholder: 'スコアの下限'
               span 〜
-              = f.date_field :created_at_lteq_end_of_day, class: 'form-control'
+              = f.number_field :score_lteq, class: 'form-control', placeholder: 'スコアの上限'
             .col-auto
               = f.submit class: 'btn btn-primary'
   .row
@@ -22,8 +22,8 @@
         thead
           tr
             th scope="col" Id
+            th scope="col" ユーザーの名前
             th scope="col" スコア
-            th scope="col" 名前
             th scope="col" 作成日時
             th scope="col" 
         tbody
