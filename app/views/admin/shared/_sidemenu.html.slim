@@ -16,17 +16,17 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4
         li.nav-item.has-treeview.menu-open
           ul.nav.nav-pills.nav-sidebar.flex-column
             li.nav-item
-              = link_to admin_users_path, class: 'nav-link' do
+              = link_to admin_users_path, class: "nav-link #{active_if('admin/users')}" do
                 i.far.fa-file.nav-icon
                 p
                   | ユーザー一覧
             li.nav-item
-              = link_to admin_results_path, class: 'nav-link' do
+              = link_to admin_results_path, class: "nav-link #{active_if('admin/results')}" do
                 i.far.fa-file.nav-icon
                 p
                   | 検証結果一覧
             li.nav-item
-              = link_to admin_messages_path, class: 'nav-link' do
+              = link_to admin_messages_path, class: "nav-link #{active_if('admin/messages')}" do
                 i.far.fa-file.nav-icon
                 p
                   | メッセージ一覧

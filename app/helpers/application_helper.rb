@@ -17,4 +17,8 @@ module ApplicationHelper
       page_title + ' | ' + base_title
     end
   end
+
+  def active_if(controller_name)
+    return 'active' if controller_name == params[:controller]
+  end
 end
