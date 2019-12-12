@@ -7,7 +7,7 @@ class ResultsController < ApplicationController
     @result = current_user.results.build(result_params)
     # 10MBを超える画像や、画像以外のファイルを顔認証APIで検証したくないので、最初にバリデーションを走らせる
     if @result.valid?
-      @result.return_gender_rate
+      @result.fetch_gender_rate
       if @result.gender.blank?
         @result.image.attachment.purge
         redirect_to root_path, danger: '画像の性別を判定できませんでした'
