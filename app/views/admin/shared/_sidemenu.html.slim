@@ -15,20 +15,20 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4
     /! Sidebar Menu
     nav.mt-2
       ul.nav.nav-pills.nav-sidebar.flex-column data-accordion="false" data-widget="treeview" role="menu" 
-        /!
-          | Add icons to the links using the .nav-icon class
-          | with font-awesome or any other icon font library
         li.nav-item.has-treeview.menu-open
           ul.nav.nav-pills.nav-sidebar.flex-column
             li.nav-item
               = link_to root_path, class: "nav-link" do
                 i.far.fa-file.nav-icon
                 p
-                  | 掲示板一覧
+                  | ユーザー一覧
             li.nav-item
               = link_to root_path, class: "nav-link" do
                 i.far.fa-file.nav-icon
                 p
-                  | ユーザー一覧
-                  /! /.sidebar-menu
-                  /! /.sidebar
+                  | 検証結果一覧
+            li.nav-item
+              = link_to root_path, class: "nav-link" do
+                i.far.fa-file.nav-icon
+                p
+                  | メッセージ一覧
