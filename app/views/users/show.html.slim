@@ -3,3 +3,8 @@ h1.mb-5
   = "#{current_user.name}"
   | さんのマイページ
 = render @results
+/! ページネーション
+.row
+  .col-md-12
+    nav
+      = paginate @results
