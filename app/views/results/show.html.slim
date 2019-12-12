@@ -1,3 +1,4 @@
+- content_for(:title, '検証結果')
 h1.mb-5 検証結果
 .row.inspection-result
   .col-sm.col-md-4
@@ -5,7 +6,7 @@ h1.mb-5 検証結果
   .col-sm.col-md-8.text-left
     | アナタが女性に見える確率は
     br/
-    span = @result.score
+    span.gender-rate = @result.score
     | %です。
     br/
     = @result.message.advice

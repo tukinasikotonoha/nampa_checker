@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_06_032830) do
+ActiveRecord::Schema.define(version: 2019_12_11_061451) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_032830) do
     t.integer "gender", null: false
     t.string "uuid"
     t.bigint "user_id", null: false
-    t.bigint "message_id", null: false
+    t.bigint "message_id", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["message_id"], name: "index_results_on_message_id"

@@ -5,9 +5,17 @@ class ResultsController < ApplicationController
 
   def create
     @result = current_user.results.build(result_params)
-    @result.reverse_score if @result.male?
-    @result.add_message
-    if @result.save
+    # 10MBを超える画像や、画像以外のファイルを顔認証APIで検証したくないので、最初にバリデーションを走らせる
+    if @result.valid?
+      @result.fetch_gender_rate
+      if @result.gender.blank?
+        @result.image.attachment.purge
+        redirect_to root_path, danger: '画像の性別を判定できませんでした'
+        return
+      end
+      @result.reverse_score if @result.male?
+      @result.add_message
+      @result.save
       redirect_to result_path(@result.uuid)
     else
       @result.image.attachment.purge
@@ -25,11 +33,7 @@ class ResultsController < ApplicationController
 
   # Strong Parameter
   def result_params
-    params.require(:result).permit(
-      :score,
-      :gender,
-      :image
-    )
+    params.require(:result).permit(:image)
   end
 
   def set_result
