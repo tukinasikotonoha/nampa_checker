@@ -7,8 +7,8 @@ class Admin::UsersController < Admin::BaseController
 
   # 検証結果を削除
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy!
+    user = User.find(params[:id])
+    user.destroy!
     redirect_to admin_users_path, success: 'ユーザーを削除しました'
   end
 end
