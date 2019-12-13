@@ -16,7 +16,7 @@ RSpec.describe 'Admin', type: :system do
     context 'ユーザー一覧からユーザーを削除' do
       it 'ユーザー一覧にリダイレクトされて「ユーザーを削除しました」とフラッシュメッセージが表示される', js: true do
         user
-        within ".sidebar" do
+        within '.sidebar' do
           click_on 'ユーザー一覧'
         end
         within "#user-#{user.id}" do
@@ -31,7 +31,7 @@ RSpec.describe 'Admin', type: :system do
     context 'ユーザー一覧で名前の検索フォームに「userの名前」を入力して検索' do
       it '検索結果に「userの名前」が表示されていること、「admin_userの名前」が表示されていないことを検証する', js: true do
         user
-        within ".sidebar" do
+        within '.sidebar' do
           click_on 'ユーザー一覧'
         end
         fill_in 'q[name_cont]', with: "#{user.name}"
@@ -44,7 +44,7 @@ RSpec.describe 'Admin', type: :system do
     context '検証結果一覧から検証結果を1つ削除' do
       it '検証結果一覧にリダイレクトされて「検証結果を削除しました」とフラッシュメッセージが表示される', js: true do
         result
-        within ".sidebar" do
+        within '.sidebar' do
           click_on '検証結果一覧'
         end
         within "#result-#{result.id}" do
@@ -60,7 +60,7 @@ RSpec.describe 'Admin', type: :system do
       it '検索結果に「95のスコアを持つ検証結果(result_over_90)」が表示されていること、「80のスコアを持つ検証結果(result)」が表示されていないこと」を検証する', js: true do
         result
         result_over_90
-        within ".sidebar" do
+        within '.sidebar' do
           click_on '検証結果一覧'
         end
         fill_in 'q[score_gteq]', with: '90'
@@ -73,10 +73,10 @@ RSpec.describe 'Admin', type: :system do
 
     context 'メッセージ一覧から「編集」ボタンをクリックして、編集画面でメッセージを編集し「更新」をクリック' do
       it 'メッセージ一覧にリダイレクトされて「メッセージを更新しました」とフラッシュメッセージが表示される', js: true do
-        within ".sidebar" do
+        within '.sidebar' do
           click_on 'メッセージ一覧'
         end
-        within "#message-10" do
+        within '#message-10' do
           click_on '編集'
         end
         fill_in 'message[advice]', with: '女装メイクや写真の撮り方を工夫してみましょう！！！'
