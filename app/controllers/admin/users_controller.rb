@@ -1,7 +1,7 @@
 class Admin::UsersController < Admin::BaseController
   # 検証結果一覧を表示、検索機能Ransackの処理を追加
   def index
-    @q = User.page(params[:page]).order(id: 'DESC').ransack(params[:q])
+    @q = User.page(params[:page]).order(id: :desc).ransack(params[:q])
     @users = @q.result(distinct: true)
   end
 

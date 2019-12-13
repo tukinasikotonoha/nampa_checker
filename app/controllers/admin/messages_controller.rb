@@ -4,7 +4,7 @@ class Admin::MessagesController < Admin::BaseController
 
   # 掲示板一覧を表示、検索機能Ransackの処理を追加
   def index
-    @messages = Message.all.order(id: 'DESC')
+    @messages = Message.all.order(id: :desc)
   end
 
   # メッセージ編集画面に移動
