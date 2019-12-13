@@ -1,4 +1,4 @@
-class Admin::ResultsController < AdminController
+class Admin::ResultsController < Admin::BaseController
   # 検証結果を取得
   before_action :set_result, only: %i[show edit update destroy]
 

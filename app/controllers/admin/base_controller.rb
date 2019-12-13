@@ -1,4 +1,4 @@
-class AdminController < ApplicationController
+class Admin::BaseController < ApplicationController
   before_action :admin_user?
 
   def admin_user?

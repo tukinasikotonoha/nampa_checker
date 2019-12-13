@@ -1,4 +1,4 @@
-class Admin::MessagesController < AdminController
+class Admin::MessagesController < Admin::BaseController
   # メッセージ情報を取得
   before_action :set_message, only: %i[edit update]
 
