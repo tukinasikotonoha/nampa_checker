@@ -7,7 +7,7 @@ RSpec.describe 'Admin', type: :system do
     context '管理者権限を持たないユーザーで管理画面にアクセス' do
       it 'トップページにリダイレクトされて「権限がありません」とフラッシュメッセージが表示される' do
         visit "/login_as/#{user.id}"
-        visit admin_path
+        visit admin_root_path
         expect(current_path).to eq root_path
         expect(page).to have_content '権限がありません'
       end
@@ -15,7 +15,7 @@ RSpec.describe 'Admin', type: :system do
 
     context 'ログインしてない状態で管理画面にアクセス' do
       it '管理者ログイン画面にリダイレクトされて「ログインしてください」とフラッシュメッセージが表示される' do
-        visit admin_path
+        visit admin_root_path
         expect(current_path).to eq admin_login_path
         expect(page).to have_content 'ログインしてください'
       end
@@ -28,7 +28,7 @@ RSpec.describe 'Admin', type: :system do
         fill_in 'email', with: admin_user.email
         fill_in 'password', with: 'password'
         click_button 'ログイン'
-        expect(current_path).to eq admin_path
+        expect(current_path).to eq admin_root_path
         expect(page).to have_content 'ログインしました'
       end
     end
