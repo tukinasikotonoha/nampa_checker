@@ -1,16 +1,11 @@
 module ApplicationHelper
   # ページごとの完全なタイトルを返します。
-  def full_title(page_title = '')
-    base_title = 'ナンパされチェッカー'
-    if page_title.empty?
-      base_title
+  def full_title(page_title = '', admin)
+    if admin == true
+      base_title = 'ナンパされチェッカー(管理画面)'
     else
-      page_title + ' | ' + base_title
+      base_title = 'ナンパされチェッカー'
     end
-  end
-
-  def admin_full_title(page_title = '')
-    base_title = 'ナンパされチェッカー(管理画面)'
     if page_title.empty?
       base_title
     else
