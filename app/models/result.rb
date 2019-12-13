@@ -6,6 +6,7 @@ class Result < ApplicationRecord
   before_create :generate_token
 
   belongs_to :user
+  delegate :name, to: :user
   belongs_to :message
   has_one_attached :image
   validates :user_id, presence: true
