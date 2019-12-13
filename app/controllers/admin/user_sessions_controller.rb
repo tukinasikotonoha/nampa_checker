@@ -1,9 +1,9 @@
 class Admin::UserSessionsController < Admin::BaseController
-  skip_before_action :require_login, only: %i[admin_login create admin_logout]
-  skip_before_action :admin_user?, only: %i[admin_login create]
+  skip_before_action :require_login, only: %i[new create destroy]
+  skip_before_action :admin_user?, only: %i[new create]
   layout 'admin_user_sessions'
 
-  def admin_login; end
+  def new; end
 
   def create
     @user = login(params[:email], params[:password])
@@ -15,7 +15,7 @@ class Admin::UserSessionsController < Admin::BaseController
     end
   end
 
-  def admin_logout
+  def destroy
     logout
     redirect_to admin_login_path, success: 'ログアウトしました'
   end

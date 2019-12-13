@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
   # 管理者ログイン、管理者画面、管理者画面ダッシュボード
   namespace :admin do
-    get '/login', to: 'user_sessions#admin_login'
+    get '/login', to: 'user_sessions#new'
     post '/login', to: 'user_sessions#create'
-    delete '/logout', to: 'user_sessions#admin_logout'
+    delete '/logout', to: 'user_sessions#destroy'
     get '/', to: 'dashboards#index'
     resources :users, only: %i[index destroy]
     resources :results, only: %i[index show destroy]
