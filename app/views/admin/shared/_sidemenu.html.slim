@@ -8,8 +8,7 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4
     /! Sidebar user panel (optional)
     .user-panel.mt-3.pb-3.mb-3.d-flex
       .info
-        = link_to admin_path, class: 'd-block' do
-          = "#{current_user.name}"
+        = link_to "#{current_user.name}", admin_path
     /! Sidebar Menu
     nav.mt-2
       ul.nav.nav-pills.nav-sidebar.flex-column data-accordion='false' data-widget='treeview' role='menu'
