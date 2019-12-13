@@ -21,10 +21,14 @@
       table.table.table-striped
         thead
           tr
-            th scope='col' Id
-            th scope='col' ユーザーの名前
-            th scope='col' スコア
-            th scope='col' 作成日時
+            th scope='col'
+              = sort_link(@q, :id, 'Id', default_order: :desc)
+            th scope='col'
+              = sort_link(@q, :name, 'ユーザーの名前', default_order: :desc)
+            th scope='col'
+              = sort_link(@q, :score, 'スコア', default_order: :desc)
+            th scope='col'
+              = sort_link(@q, :created_at, '作成日時', default_order: :desc)
             th scope='col' 
         tbody
           = render @results
