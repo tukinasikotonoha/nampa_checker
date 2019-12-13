@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Admin', type: :system do
   let(:user) { create :user }
   let(:admin_user) { create :user, :admin }
-  describe '管理画面' do
+  describe '管理者ログイン画面' do
     context '管理者権限を持たないユーザーで管理画面にアクセス' do
       it 'トップページにリダイレクトされて「権限がありません」とフラッシュメッセージが表示される' do
         visit "/login_as/#{user.id}"
