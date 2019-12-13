@@ -2,8 +2,6 @@ class Admin::ResultsController < Admin::BaseController
   # 検証結果を取得
   before_action :set_result, only: %i[show edit update destroy]
 
-  # レイアウトは管理者ダッシュボードTOPと同じものを使用
-  layout 'admin_dashboards'
   # 検証結果一覧を表示、検索機能Ransackの処理を追加
   def index
     @q = Result.page(params[:page]).order(id: 'DESC').ransack(params[:q])

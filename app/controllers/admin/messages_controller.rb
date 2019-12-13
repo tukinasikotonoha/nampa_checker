@@ -2,8 +2,6 @@ class Admin::MessagesController < Admin::BaseController
   # メッセージ情報を取得
   before_action :set_message, only: %i[edit update]
 
-  # レイアウトは管理者ダッシュボードTOPと同じものを使用
-  layout 'admin_dashboards'
   # 掲示板一覧を表示、検索機能Ransackの処理を追加
   def index
     @messages = Message.all.order(id: 'DESC')
