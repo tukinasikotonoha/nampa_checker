@@ -6,7 +6,6 @@ RSpec.describe 'Admin', type: :system do
   let(:result) { create :result }
   let(:result_over_90) { create :result, :over_90 }
   before do
-    admin_user
     visit admin_login_path
     fill_in 'email', with: admin_user.email
     fill_in 'password', with: 'password'
