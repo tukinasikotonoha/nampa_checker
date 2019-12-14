@@ -110,6 +110,3 @@ gem 'kaminari'
 
 # 検索機能
 gem 'ransack'
-
-# Twitter投稿
-gem 'twitter'
