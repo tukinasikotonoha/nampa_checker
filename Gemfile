@@ -110,3 +110,6 @@ gem 'kaminari'
 
 # 検索機能
 gem 'ransack'
+
+# 静的ページの追加
+gem 'high_voltage'
