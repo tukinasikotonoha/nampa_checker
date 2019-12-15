@@ -62,3 +62,23 @@
 .validation-date{
   font-size: 20px;
 }
+
+//フッター部分の調整
+footer {
+  width: 100%;
+  padding: 10px 0px;
+  background-color: #EF0896;
+  ul {
+    display: table;
+    margin: 10px auto;
+    list-style-type: none;
+    li {
+      text-decoration: none;
+      display: inline;
+      a {
+        margin: 0 12px;
+        color: #FFF;
+      }
+    }
+  }
+}
