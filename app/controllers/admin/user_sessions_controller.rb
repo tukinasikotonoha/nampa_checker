@@ -1,6 +1,6 @@
 class Admin::UserSessionsController < Admin::BaseController
   skip_before_action :require_login, only: %i[new create destroy]
-  skip_before_action :admin_user?, only: %i[new create]
+  skip_before_action :access_prohibit_non_admin_user, only: %i[new create]
   layout 'admin_user_sessions'
 
   def new; end
