@@ -2,7 +2,7 @@ doctype html
 html
   head
     = display_meta_tags(default_meta_tags)
-    title= full_title(page_title: yield(:title),admin: false )
+    title= full_title(page_title: yield(:title))
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'

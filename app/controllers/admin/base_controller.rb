@@ -1,8 +1,8 @@
 class Admin::BaseController < ApplicationController
-  before_action :admin_user?
+  before_action :prohibit_access_except_admin_user
   layout 'admin_dashboards'
 
-  def admin_user?
+  def prohibit_access_except_admin_user
     redirect_back_or_to root_path, warning: '権限がありません' unless current_user.admin?
   end
 

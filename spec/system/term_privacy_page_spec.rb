@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Admin', type: :system do
+RSpec.describe 'StaticPages', type: :system do
   let(:user) { create :user }
   describe 'トップページ' do
     context 'フッターの「利用規約」リンクをクリック' do
