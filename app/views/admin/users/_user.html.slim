@@ -1,0 +1,12 @@
+tr id="user-#{user.id}"
+  td
+    = user.id
+  td
+    = user.name
+  td
+    = user.role_i18n
+  td
+    = l user.created_at, format: :long
+  td
+    - if user.general?
+      = link_to '削除', admin_user_path(user), class: 'btn btn-danger', method: :delete, data: {confirm: 'ユーザーを削除しますか？'}

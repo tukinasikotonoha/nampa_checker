@@ -1,0 +1,15 @@
+tr id="message-#{message.id}"
+  td
+    = message.id
+  td
+    = message.maximum
+    | %
+  td
+    | 〜
+  td
+    = message.minimum
+    | %
+  td
+    = message.advice
+  td
+    = link_to '編集', edit_admin_message_path(message), class: 'btn btn-success'

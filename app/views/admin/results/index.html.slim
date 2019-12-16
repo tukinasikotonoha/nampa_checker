@@ -1,0 +1,39 @@
+- content_for(:title, '検証結果一覧')
+.container.mb-5.pt-2
+  h1
+    | 検証結果一覧
+  .row
+    .col-md-12.mb-3
+      /! 検索フォーム
+      = search_form_for @q, url: admin_results_path do |f|
+        .row
+          .form-inline.align-items-center.mx-auto
+            .col-auto
+              = f.search_field :user_name_cont, class: 'form-control', placeholder: 'ユーザーの名前'
+            .col-auto
+              = f.number_field :score_gteq, class: 'form-control', placeholder: 'スコアの下限'
+              span 〜
+              = f.number_field :score_lteq, class: 'form-control', placeholder: 'スコアの上限'
+            .col-auto
+              = f.submit class: 'btn btn-primary'
+  .row
+    .col-md-12
+      table.table.table-striped
+        thead
+          tr
+            th scope='col'
+              = sort_link(@q, :id, 'Id', default_order: :desc)
+            th scope='col'
+              = sort_link(@q, :name, 'ユーザーの名前', default_order: :desc)
+            th scope='col'
+              = sort_link(@q, :score, 'スコア', default_order: :desc)
+            th scope='col'
+              = sort_link(@q, :created_at, '作成日時', default_order: :desc)
+            th scope='col' 
+        tbody
+          = render @results
+  /! ページネーション
+  .row
+    .col-md-12
+      nav
+        = paginate @results

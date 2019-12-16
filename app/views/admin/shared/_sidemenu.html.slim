@@ -1,0 +1,31 @@
+aside.main-sidebar.sidebar-dark-primary.elevation-4
+  /! Brand Logo
+  = link_to admin_root_path, class: 'brand-link' do
+    = image_tag 'AdminLTELogo.png', class: 'brand-image img-circle elevation-3', alt: 'AdminLTE Logo'
+    span.brand-text.font-weight-light AdminLTE 3
+  /! Sidebar
+  .sidebar
+    /! Sidebar user panel (optional)
+    .user-panel.mt-3.pb-3.mb-3.d-flex
+      .info
+        = link_to "#{current_user.name}", admin_root_path
+    /! Sidebar Menu
+    nav.mt-2
+      ul.nav.nav-pills.nav-sidebar.flex-column data-accordion='false' data-widget='treeview' role='menu'
+        li.nav-item.has-treeview.menu-open
+          ul.nav.nav-pills.nav-sidebar.flex-column
+            li.nav-item
+              = link_to admin_users_path, class: "nav-link #{active_if('admin/users')}" do
+                i.far.fa-file.nav-icon
+                p
+                  | ユーザー一覧
+            li.nav-item
+              = link_to admin_results_path, class: "nav-link #{active_if('admin/results')}" do
+                i.far.fa-file.nav-icon
+                p
+                  | 検証結果一覧
+            li.nav-item
+              = link_to admin_messages_path, class: "nav-link #{active_if('admin/messages')}" do
+                i.far.fa-file.nav-icon
+                p
+                  | メッセージ一覧

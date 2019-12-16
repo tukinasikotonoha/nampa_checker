@@ -1,0 +1,30 @@
+- content_for(:title, 'メッセージ編集')
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1
+        | メッセージ編集
+      table.table.table-striped
+        thead
+          tr
+            th scope="col" 上限値
+            th scope="col"
+            th scope="col" 下限値
+          tr
+            td
+              = @message.maximum
+              | %
+            td
+              | 〜
+            td
+              = @message.minimum
+              | %
+      = form_with model: @message, url: admin_message_path, local: true do |form|
+        = render 'layouts/error_messages', model: form.object
+        .form-group
+          = form.label :advice
+          = form.text_field :advice, class: 'form-control'
+        = form.submit '更新', class: 'btn btn-primary'

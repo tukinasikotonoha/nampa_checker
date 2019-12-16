@@ -1,0 +1,33 @@
+- content_for(:title, 'ユーザー一覧')
+.container.mb-5.pt-2
+  h1
+    | ユーザー一覧
+  .row
+    .col-md-12.mb-3
+      /! 検索フォーム
+      = search_form_for @q, url: admin_users_path do |f|
+        .row
+          .form-inline.align-items-center.mx-auto
+            .col-auto
+              = f.search_field :name_cont, class: 'form-control', placeholder: '名前'
+            .col-auto
+              = f.select :role_eq, User.roles.map {|k, v| [t("enums.user.role.#{k}"), v]}, {include_blank: '指定なし'}, class: 'form-control mr-1'
+            .col-auto
+              = f.submit class: 'btn btn-primary'
+  .row
+    .col-md-12
+      table.table.table-striped
+        thead
+          tr
+            th scope="col" Id
+            th scope="col" 名前
+            th scope="col" 権限
+            th scope="col" 作成日時
+            th scope="col" 
+        tbody
+          = render @users
+  /! ページネーション
+  .row
+    .col-md-12
+      nav
+        = paginate @users

@@ -96,6 +96,7 @@ gem 'sorcery'
 
 # 日本語対応
 gem 'rails-i18n'
+gem 'enum_help'
 
 # 顔認証API
 gem 'aws-sdk', '~> 3'
@@ -103,3 +104,9 @@ gem 'aws-sdk-rekognition'
 
 # テスト環境でSeedを作る
 gem 'seed-fu'
+
+# ページネーション
+gem 'kaminari'
+
+# 検索機能
+gem 'ransack'

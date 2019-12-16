@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    meta content=('text/html; charset=UTF-8') http-equiv='Content-Type' /
+    meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" /
+    title= full_title(page_title: yield(:title),admin: true)
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'admin', media: 'all'
+    = javascript_include_tag 'admin'
+  body.hold-transition.login-page
+    = render 'shared/flash_message'
+    = yield

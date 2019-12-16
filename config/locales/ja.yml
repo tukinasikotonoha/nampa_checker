@@ -4,3 +4,7 @@ ja:
       gender:
         male: 男性
         female: 女性
+    user:
+      role:
+        general: 一般
+        admin: 管理者
