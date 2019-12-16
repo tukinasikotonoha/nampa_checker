@@ -39,13 +39,13 @@ class Result < ApplicationRecord
     if image.blob.byte_size > 10.megabytes
       errors.add(:image, 'のファイルサイズは10MB以下でお願いします')
     elsif !content_type_image?
-      errors.add(:image, 'の拡張子はjpg/jpeg/gif/pngのみアップロード可能です')
+      errors.add(:image, 'の拡張子はjpg/jpeg/pngのみアップロード可能です')
     end
   end
 
   # 拡張子のバリデーション
   def content_type_image?
-    %w[image/jpg image/jpeg image/gif image/png].include?(image.blob.content_type)
+    %w[image/jpg image/jpeg image/png].include?(image.blob.content_type)
   end
 
   # 顔認証API
