@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta content=('text/html; charset=UTF-8') http-equiv='Content-Type' /
-    title= full_title(page_title: yield(:title),admin: true )
+    title= full_title(page_title: yield(:title),admin: true)
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'admin', media: 'all'
