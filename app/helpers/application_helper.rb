@@ -37,7 +37,7 @@ module ApplicationHelper
             description: 'アナタの女装姿が「女性に見えるのか」を検証できる顔認証アプリケーション「ナンパされチェッカー」です。', # もしくは description: :description
             type: 'website',
             url: request.original_url,
-            image: image_url('top.jpg'),
+            image: image_url('twitter-card.png'),
             locale: 'ja_JP',
         },
         twitter: {
