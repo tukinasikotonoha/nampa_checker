@@ -15,7 +15,7 @@ RSpec.describe 'StaticPages', type: :system do
     end
 
     context 'フッターの「プライバシーポリシー」リンクをクリック' do
-      it '遷移先のcurrent_pathがプライバシーポリシーページなのか検証' do
+      it '遷移先のcurrent_pathがプライバシーポリシーページであること' do
         visit "/login_as/#{user.id}"
         visit root_path
         within '.footer' do
