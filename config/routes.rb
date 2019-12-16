@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'tops#index'
   resources :results, param: :uuid, only: %i[index show new create destroy]
   get '/mypage', to: 'users#show' # マイページ
+  get '/term', to: 'static_pages#term' # 利用規約
+  get '/privacy', to: 'static_pages#privacy' # プライバシーポリシー
   delete '/logout', to: 'user_sessions#destroy' # ログアウト機能
   post 'oauth/callback', to: 'oauths#callback' # Twitterログイン
   get 'oauth/callback', to: 'oauths#callback' # for use with Github, Facebook
