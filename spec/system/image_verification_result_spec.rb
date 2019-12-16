@@ -15,10 +15,18 @@ RSpec.describe 'Results', type: :system do
     end
 
     context 'svg形式の画像をアップロード' do
-      it '「画像の拡張子はjpg/jpeg/gif/pngのみアップロード可能です」とフラッシュメッセージが表示される' do
+      it '「画像の拡張子はjpg/jpeg/pngのみアップロード可能です」とフラッシュメッセージが表示される' do
         attach_file 'result[image]', "#{Rails.root}/spec/system/images/svg_icon.svg"
         click_button '女性に見える確率を検証'
-        expect(page).to have_content '画像の拡張子はjpg/jpeg/gif/pngのみアップロード可能です'
+        expect(page).to have_content '画像の拡張子はjpg/jpeg/pngのみアップロード可能です'
+      end
+    end
+
+    context 'gif形式の画像をアップロード' do
+      it '「画像の拡張子はjpg/jpeg/pngのみアップロード可能です」とフラッシュメッセージが表示される' do
+        attach_file 'result[image]', "#{Rails.root}/spec/system/images/dog.gif"
+        click_button '女性に見える確率を検証'
+        expect(page).to have_content '画像の拡張子はjpg/jpeg/pngのみアップロード可能です'
       end
     end
 
