@@ -1,6 +1,6 @@
 class Admin::ResultsController < Admin::BaseController
   # 検証結果を取得
-  before_action :set_result, only: %i[show edit update destroy]
+  before_action :set_result, only: %i[show destroy]
 
   # 検証結果一覧を表示、検索機能Ransackの処理を追加
   def index
