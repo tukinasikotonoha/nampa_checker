@@ -4,7 +4,7 @@ RSpec.describe 'StaticPages', type: :system do
   let(:user) { create :user }
   describe 'トップページ' do
     context 'フッターの「利用規約」リンクをクリック' do
-      it '遷移先のcurrent_pathが利用規約ページなのか検証' do
+      it '遷移先のcurrent_pathが利用規約ページであること' do
         visit "/login_as/#{user.id}"
         visit root_path
         within '.footer' do
@@ -15,7 +15,7 @@ RSpec.describe 'StaticPages', type: :system do
     end
 
     context 'フッターの「プライバシーポリシー」リンクをクリック' do
-      it '遷移先のcurrent_pathがプライバシーポリシーページなのか検証' do
+      it '遷移先のcurrent_pathがプライバシーポリシーページであること' do
         visit "/login_as/#{user.id}"
         visit root_path
         within '.footer' do
