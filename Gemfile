@@ -110,3 +110,6 @@ gem 'kaminari'
 
 # 検索機能
 gem 'ransack'
+
+# OGP設定
+gem 'meta-tags'
