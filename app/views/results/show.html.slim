@@ -16,7 +16,7 @@ h1.mb-5 検証結果
           i.fas.fa-female
           | 別の写真で検証
       .col-sm.text-center.mt-4
-        = link_to "https://twitter.com/share?text=アナタが女性に見える確率は#{@result.score}％です。%0a#{@result.message.advice}%0a%23ナンパされチェッカー%0a&url=#{request.url}", class: 'btn-block twitter-button p-3', target: '_blank' do
+        = link_to "https://twitter.com/share?text=アナタが女性に見える確率は#{@result.score}％です。%0a#{@result.message.advice}%0a%23ナンパされチェッカー%0a&url=#{root_url}", class: 'btn-block twitter-button p-3', target: '_blank' do
           i.fab.fa-twitter
           | 結果をTwitterに投稿
 script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"
