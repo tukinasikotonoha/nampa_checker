@@ -11,42 +11,42 @@ Message.create!(
             minimum: 80.00
         },
         {
-            advice:  "70パーセント代です",
+            advice:  "後ろから見たら女性にしか見えない！！",
             maximum: 79.99,
             minimum: 70.00
         },
         {
-            advice:  "60パーセント代です",
+            advice:  "ナンパされるまでもう少し！",
             maximum: 69.99,
             minimum: 60.00
         },
         {
-            advice:  "50パーセント代です！",
+            advice:  "2人に1人はアナタのことを女性と見間違えるかも！",
             maximum: 59.99,
             minimum: 50.00
         },
         {
-            advice:  "40パーセント代です！",
+            advice:  "女装メイクは目が命！カラーコンタクトも試してみるのもオススメです！",
             maximum: 49.99,
             minimum: 40.00
         },
         {
-            advice:  "30パーセント代です！",
+            advice:  "女装メイクや写真の撮り方を工夫してましょう！",
             maximum: 39.99,
             minimum: 30.00
         },
         {
-            advice:  "20パーセント代です！",
+            advice:  "輪郭を誤魔化せるロングヘアーウィッグなどを試してみましょう！",
             maximum: 29.99,
             minimum: 20.00
         },
         {
-            advice:  "10パーセント代です！",
+            advice:  "イケメンな写真をアップロードしましたね・・？",
             maximum: 19.99,
             minimum: 10.00
         },
         {
-            advice:  "女装メイクや写真の撮り方を工夫してみましょう！",
+            advice:  "おっと！アナタの写真はイケメン度合いが高いようです・・・",
             maximum: 9.99,
             minimum: 0.00
         },
