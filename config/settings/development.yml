@@ -1,0 +1,2 @@
+twitter:
+  callback_url: http://localhost:3000/oauth/callback
