@@ -113,3 +113,6 @@ gem 'ransack'
 
 # OGP設定
 gem 'meta-tags'
+
+# 環境毎に定数を管理
+gem 'config'
