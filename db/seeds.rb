@@ -53,8 +53,8 @@ Message.create!(
     ]
 )
 User.create!(name: "管理者",
-             email:  "admin@example.com",
-             password:               "password",
-             password_confirmation:  "password",
+             email:  Rails.application.credentials.admin_user_email,
+             password:               Rails.application.credentials.admin_user_password,
+             password_confirmation:  Rails.application.credentials.admin_user_password,
              role: 1
 )
