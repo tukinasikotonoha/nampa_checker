@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # アクセス解析
-  GA.tracker = "UA-75356971-7"
+  GA.tracker = 'UA-75356971-7'
 end
