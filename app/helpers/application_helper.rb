@@ -42,7 +42,8 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@tukinasikotonoh'
+        site: '@tukinasikotonoh',
+        title: 'アナタの「女装姿」はナンパされるか？ | ナンパされチェッカー'
       }
     }
   end
