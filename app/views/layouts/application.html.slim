@@ -1,17 +1,20 @@
 doctype html
 html
   head
+    = display_meta_tags(default_meta_tags)
     title= full_title(page_title: yield(:title))
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = analytics_init if Rails.env.production?
   body
-    - if logged_in?
-      = render 'shared/header'
-    - else
-      = render 'shared/before_login_header'
-    = render 'shared/flash_message'
-    .container.text-center.py-5
-      = yield
-    = render 'shared/footer'
+    #wrapper
+      - if logged_in?
+        = render 'shared/header'
+      - else
+        = render 'shared/before_login_header'
+      = render 'shared/flash_message'
+      .container.text-center.py-5
+        = yield
+      = render 'shared/footer'

@@ -110,3 +110,12 @@ gem 'kaminari'
 
 # 検索機能
 gem 'ransack'
+
+# OGP設定
+gem 'meta-tags'
+
+# 環境毎に定数を管理
+gem 'config'
+
+# アクセス解析
+gem 'google-analytics-rails'

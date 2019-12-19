@@ -16,4 +16,34 @@ module ApplicationHelper
   def active_if(controller_name)
     'active' if controller_name == params[:controller]
   end
+
+  def default_meta_tags
+    {
+        # site: 'ナンパされチェッカー',
+        # title: 'アナタの「女装姿」はナンパされるか？',
+        reverse: true,
+        charset: 'utf-8',
+        description: 'アナタの女装姿が「女性に見えるのか」を検証できる顔認証アプリケーション「ナンパされチェッカー」です。',
+        keywords: '女装,ナンパ',
+        canonical: request.original_url,
+        separator: '|',
+        icon: [
+            { href: image_url('favicon.ico') },
+            { href: image_url('icon-192x192.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
+        ],
+        og: {
+            # site_name: 'ナンパされチェッカー', # もしくは site_name: :site
+            # title: 'アナタの「女装姿」はナンパされるか？', # もしくは title: :title
+            description: 'アナタの女装姿が「女性に見えるのか」を検証できる顔認証アプリケーション「ナンパされチェッカー」です。', # もしくは description: :description
+            type: 'website',
+            url: request.original_url,
+            image: image_url('twitter-card.png'),
+            locale: 'ja_JP',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            site: '@tukinasikotonoh',
+        }
+    }
+  end
 end
