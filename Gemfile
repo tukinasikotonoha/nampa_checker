@@ -57,16 +57,6 @@ group :development do
   # rubocop
   gem 'rubocop', require: false
   gem 'rubocop-rails'
-  # capistrano
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-end
-
-group :production, :staging do
-  # デプロイ用
-  gem 'unicorn'
 end
 
 group :test do
