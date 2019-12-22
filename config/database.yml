@@ -49,9 +49,11 @@ test:
 #
 production:
   <<: *default
+  adapter: mysql2
   encoding: utf8mb4
-  charset: utf8mb4
-  collation: utf8mb4_general_ci
+　charset: utf8mb4
+  pool: 5
   database: nampa_checker_production
-  username: nampa_checker
-  password: <%= ENV['NAMPA_CHECKER_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= Rails.application.credentials.mysql_password %>
+  socket: /var/lib/mysql/mysql.sock
