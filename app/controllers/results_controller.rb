@@ -1,5 +1,6 @@
 class ResultsController < ApplicationController
   before_action :set_result, only: %i[show destroy]
+  skip_before_action :require_login, only: %i[show]
 
   def show; end
 
