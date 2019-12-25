@@ -1,4 +1,8 @@
 # ナンパされチェッカー
+## 本番URL
+https://www.nampa-checker.com/
+
+[![Image from Gyazo](https://i.gyazo.com/8d04c8b041246429f8838b360f39706c.gif)](https://gyazo.com/8d04c8b041246429f8838b360f39706c)
 
 ## サービス概要
 ナンパされてみたい「女装男子」が  
@@ -28,3 +32,31 @@
 
 ## マーケット
 - 女装趣味がありナンパされてみたい人
+
+# 実装した機能
+- Twitterログイン(TwitterAPI+Socery)
+- 画像アップロード・削除（Active Storage+Amazon S3)
+- 顔認証(Amazon Rekognition)
+- TwitterOGP対応
+[![Image from Gyazo](https://i.gyazo.com/92e9a5a8d3b534e388b33f98223fce81.png)](https://gyazo.com/92e9a5a8d3b534e388b33f98223fce81)
+- Google Analyticsでのアクセス解析
+- 管理画面(Admin LTE)
+[![Image from Gyazo](https://i.gyazo.com/1221dbe953add8cf64a9d4248064c46e.png)](https://gyazo.com/1221dbe953add8cf64a9d4248064c46e)
+
+# 使用技術
+## 言語フレームワーク
+- Ruby 2.6.4
+- Ruby on Rails 5.2.3
+- Bootstrap 4(CSSフレームワーク)
+
+## インフラ
+- AWS
+  - VPC
+  - EC2
+  - Elastic IP
+  - RDS for MySQL 5.7.26
+  - Route53
+  - S3
+  - ACM
+## テスト(Rspec)
+- 統合テスト(system spec)
