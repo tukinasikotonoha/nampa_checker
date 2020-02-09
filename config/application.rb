@@ -37,5 +37,8 @@ module NampaChecker
     # 日本語化
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
+		# modelやcontrollerを作るタイイングでテストファイルを作成
+		g.test_framework :rspec
   end
 end
