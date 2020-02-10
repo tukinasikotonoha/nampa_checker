@@ -32,18 +32,17 @@ module NampaChecker
       g.helper false          # ヘルパー生成せず
       g.assets false          # CSS/JSファイル生成せず
       g.skip_routes true      # routes.rb変更せず
-			# modelやcontrollerを作るタイイングでテストファイルを作成
-			g.test_framework :rspec,
-				fixtures: true,
-				view_specs: false,
-				routing_specs: false,
-				helper_specs: false,
-				controller_specs: false,
-				request_specs: true
+      # modelやcontrollerを作るタイイングでテストファイルを作成
+      g.test_framework :rspec,
+                       fixtures: true,
+                       view_specs: false,
+                       routing_specs: false,
+                       helper_specs: false,
+                       controller_specs: false,
+                       request_specs: true
     end
     # 日本語化
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
-
   end
 end
