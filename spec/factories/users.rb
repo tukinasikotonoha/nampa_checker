@@ -10,10 +10,6 @@ FactoryBot.define do
       sequence(:email) { |n| "admin#{n}@example.com" }
       sequence(:name) { |n| "admin#{n}" }
       role { :admin }
-		end
-
-		trait :email_duplication do
-      sequence(:email) { "user@example.com" }
-		end
+    end
   end
 end
