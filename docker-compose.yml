@@ -1,0 +1,45 @@
+# docker-compose.yml
+# 開発環境用のdocker-compose
+
+version: '3.2'
+
+
+services:
+
+  database:
+    restart: always
+    image: mysql:5.7
+    ports:
+      - 4305:3306
+    volumes:
+      - mysql-datavolume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/development/Dockerfile
+    command: >
+      bash -c "
+        yarn install --check-files &&
+        rm -f tmp/pids/server.pid &&
+        bundle install --quiet &&
+        bundle exec rails db:migrate:reset &&
+        bundle exec rails db:seed &&
+        bundle exec rails s -p 3000 -b '0.0.0.0'
+      "
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/nampa_checker
+      - "bundle:/usr/local/bundle"
+    depends_on:
+      - database
+
+
+volumes:
+  bundle:
+    driver: local
+  mysql-datavolume:
+    driver: local
