@@ -1,5 +1,5 @@
 # ナンパされチェッカー
-## 本番URL
+## 本番URL（現在、サービス休止中です）
 https://www.nampa-checker.com/
 
 [![Image from Gyazo](https://i.gyazo.com/8d04c8b041246429f8838b360f39706c.gif)](https://gyazo.com/8d04c8b041246429f8838b360f39706c)
